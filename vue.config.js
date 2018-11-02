@@ -1,6 +1,7 @@
 const path = require('path');
 module.exports = {
     baseUrl: './',
+    outputDir: path.resolve(__dirname, './docs'),
     configureWebpack: (config) => {
         if (process.env.NODE_ENV === 'production') {
             // config.output.publicPath = "./"; // string

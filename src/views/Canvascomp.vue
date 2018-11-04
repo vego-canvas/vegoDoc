@@ -9,6 +9,7 @@
         <containerexample></containerexample>
         <tweendoc></tweendoc>
         <tweenexample></tweenexample>
+        <apidoc></apidoc>
     </div>
 </template>
 <script>
@@ -17,6 +18,7 @@ import containerdoc from '../docs/canvascomp/container.md';
 import tweendoc from '../docs/canvascomp/tween.md';
 import containerexample from './ContainerExample.vue';
 import tweenexample from './TweenExample.vue';
+import apidoc from '../docs/canvascomp/apis.md';
 
 const imgStructure = require('../assets/vego.png');
 
@@ -27,6 +29,7 @@ export default {
         containerexample,
         tweendoc,
         tweenexample,
+        apidoc,
     },
     data() {
         return {

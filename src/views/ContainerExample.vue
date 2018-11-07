@@ -2,13 +2,16 @@
 <div class="card">
     <vego-canvas :width="400" :height="100">
         <my-circle :config="circle1"
-            @mousemove="onmousemove('mousemove circle1')"
+            @mousemove="onmousemove('mousemove circle1', $event)"
+            @mouseleave="onmouseleave($event)"
         ></my-circle>
         <my-circle :config="circle2"
-            @mousemove="onmousemove('mousemove circle2')"
+            @mousemove="onmousemove('mousemove circle2', $event)"
+            @mouseleave="onmouseleave($event)"
         ></my-circle>
         <vego-container :x="x" :y="y"
-            @mousemove="onmousemove('mousemove circle3 or 4')"
+            @mousemove="onmousemove('mousemove circle3 or 4', $event)"
+            @mouseleave="onmouseleave($event)"
         >
             <my-circle :config="circle3"></my-circle>
             <my-circle :config="circle4" @mousemove="onmousemovecircle4"></my-circle>
@@ -32,12 +35,14 @@ export default {
                 y: 50,
                 r: 50,
                 color: 'red',
+                stroke: false,
             },
             circle2: {
                 x: 80,
                 y: 50,
                 r: 50,
                 color: 'blue',
+                stroke: false,
             },
             x: 100,
             y: 50,
@@ -46,20 +51,26 @@ export default {
                 y: 0,
                 r: 50,
                 color: 'yellow',
+                stroke: false,
             },
             circle4: {
                 x: 40,
                 y: 0,
                 r: 50,
                 color: 'green',
+                stroke: false,
             },
 
             msg: '',
         };
     },
     methods: {
-        onmousemove(which) {
+        onmousemove(which, event) {
             this.msg = which;
+            event.target.config.stroke = true;
+        },
+        onmouseleave(event) {
+            event.target.config.stroke = false;
         },
         onmousemovecircle4(event) {
             this.msg = '';

@@ -20,6 +20,9 @@
             <div class="sidebar-header">
                 <router-link to="spritesheet">Sprite Sheet</router-link>
             </div>
+            <div class="sidebar-header">
+                <router-link to="game">Game!</router-link>
+            </div>
         </nav>
         <nav class="border fixed split-nav" v-if="ismobile">
             <div class="nav-brand">
@@ -39,6 +42,7 @@
                     <li><router-link to="introduction">Introduction</router-link></li>
                     <li><router-link to="canvascomp">Canvas Components</router-link></li>
                     <li><router-link to="spritesheet">Sprite Sheet</router-link></li>
+                    <li><router-link to="game">Game!</router-link></li>
                 </ul>
                 </div>
             </div>

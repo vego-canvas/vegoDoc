@@ -8,8 +8,9 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "immutable": "^4.0.0-rc.12",
     "is-mobile": "^2.0.0",
-    "vego": "^1.0.2",
+    "vego": "^1.0.5",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1"
   },

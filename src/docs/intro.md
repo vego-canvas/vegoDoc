@@ -19,7 +19,7 @@ npm install --save vego
 #### Step 1. Use plugin
 
 ```javascript
-import plugin from 'vego/plugin';
+import plugin from 'vego';
 Vue.use(plugin);
 
 // other initialization

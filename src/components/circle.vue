@@ -1,27 +1,20 @@
 <template>
-<div :config="config"></div>
+    <div :r="r" :color="color">
+    </div>
 </template>
 <script>
+import { VegoComponent } from 'vego';
 export default {
-    props: { config: Object },
-    draw(ctx, p) {
+    mixins: [VegoComponent],
+    props: { r: Number, color: String },
+    draw(g) {
         const {
-            x, y, r, color, stroke,
-        } = this.config;
-
-        ctx.beginPath();
-        ctx.save();
-        ctx.fillStyle = color;
-        if (stroke) {
-            ctx.lineWidth = 20;
-        }
-        ctx.arc(x, y, stroke ? r - 10 : r, 0, 2 * Math.PI);
-        if (stroke) {
-            ctx.strokeStyle = 'black';
-            ctx.stroke();
-        }
-        ctx.fill();
-        ctx.restore();
+            r, color,
+        } = this;
+        g.beginPath()
+            .setFillStyle(color)
+            .arc(0, 0, r, 0, Math.PI * 2)
+            .fill();
     },
 };
 </script>

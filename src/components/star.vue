@@ -1,0 +1,71 @@
+<template>
+    <div></div>
+</template>
+<script>
+import {VegoComponent} from 'vego';
+export default {
+    name: 'my-star',
+    mixins: [VegoComponent],
+    props: {
+        fillColor: String,
+        strokeColor: String,
+        spikes: Number,
+        outerRadius: Number,
+        innerRadius: Number,
+    },
+    created() {
+        console.log('created');
+        console.log(this.$options)
+    },
+    mounted() {
+        console.log('mounted');
+        this.vegoDisplayObject.$regist('mouseenter', (payload) => {
+            this.$emit('mouseenter', payload);
+        });
+        this.vegoDisplayObject.$regist('mouseleave', (payload) => {
+            this.$emit('mouseleave', payload);
+        });
+    },
+    customOption: 'foo',
+    draw(g) {
+        const {
+            fillColor,
+            strokeColor,
+            spikes,
+            outerRadius,
+            innerRadius,
+        } = this;
+        let rot = Math.PI / 2 * 3;
+        const cx = 0;
+        const cy = 0;
+        let x = cx;
+        let y = cy;
+        const step = Math.PI / spikes;
+        console.log('draw');
+        g.beginPath()
+            .moveTo(cx, cy - outerRadius);
+        for (let i = 0; i < spikes; i++) {
+            x = cx + Math.cos(rot) * outerRadius;
+            y = cy + Math.sin(rot) * outerRadius;
+            g.lineTo(x, y);
+            rot += step;
+
+            x = cx + Math.cos(rot) * innerRadius;
+            y = cy + Math.sin(rot) * innerRadius;
+            g.lineTo(x, y);
+            rot += step;
+        }
+
+        g.lineTo(cx, cy - outerRadius)
+            .closePath()
+            .setLineWidth(5)
+            .setStrokeStyle(strokeColor)
+            .stroke()
+            .setFillStyle(fillColor)
+            .fill();
+    },
+};
+</script>
+<style>
+
+</style>

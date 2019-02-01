@@ -7,24 +7,24 @@
 // import Vue from 'vue';
 export default {
     props: { x: Number, y: Number, text: String, font: String, fill: String, stroke: String },
-    draw(ctx, p) {
+    draw(g) {
         const {
             x, y, text, font, fill, stroke,
         } = this;
+        g.beginPath()
+            .save()
 
         ctx.beginPath();
         ctx.save();
         if (font)
-            ctx.font = font;
+            g.setFont(font)
         if (fill) {
-            ctx.fillStyle = fill;
-            ctx.fillText(text, x, y, 200);
+            g.setFillStyle(fill).fillText(text, x, y, 200);
         }
         if (stroke) {
-            ctx.strokeStyle = stroke;
-            ctx.strokeText(text, x, y, 200);
+            g.setStrokeStyle(stroke).strokeText(text, x, y, 200);
         }
-        ctx.restore();
+        g.restore();
     },
 };
 </script>

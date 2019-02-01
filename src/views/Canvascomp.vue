@@ -2,11 +2,10 @@
     <div>
         <h1>Canvas Component</h1>
         <introdoc></introdoc>
-        <div>
+        <!-- <div>
             <img :src="imgStructure">
         </div>
-        <containerdoc></containerdoc>
-        <containerexample></containerexample>
+        <containerdoc></containerdoc> -->
         <tweendoc></tweendoc>
         <tweenexample></tweenexample>
         <apidoc></apidoc>
@@ -16,7 +15,7 @@
 import introdoc from '../docs/canvascomp/intro.md';
 import containerdoc from '../docs/canvascomp/container.md';
 import tweendoc from '../docs/canvascomp/tween.md';
-import containerexample from './ContainerExample.vue';
+// import containerexample from './ContainerExample.vue';
 import tweenexample from './TweenExample.vue';
 import apidoc from '../docs/canvascomp/apis.md';
 
@@ -26,7 +25,6 @@ export default {
     components: {
         introdoc,
         containerdoc,
-        containerexample,
         tweendoc,
         tweenexample,
         apidoc,

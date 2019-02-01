@@ -2,18 +2,12 @@
 
 **vego-canvas**: canvas wrapper. It has width, height properties and basic events emiters. And it can fit different devicePixelRatio. All components within this tag must implement draw function which named as  *canvas components*.
 
-**eventDispatcher**: a mixin mimic mouse event, iucludes click, mousedown, mouseup and ect. It will mixin into *canvas component* when created.
+**VegoComponent**: canvas component mixin which mixin basic geometry properties into ordinary components.
 
-**drawStack**:  a mixin into *canvas component* when created. It injects function `_updateContext` for every *canvas components*.
+**Graphic**: A thin wrapper for [CanvasRenderingContext2D](https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D) API which implement method chaining pattern.
 
-**tweenMixin**: a mixin used to calculate tweening when declared data changed.
-
-**spriteSheet**: a *canvas component* to display a sprite sheet.
-
-**vego-container**:  a *canvas component* to contain other *canvas components* and it has own coordiantes-origin from left top.
-
-**ticker**: a internal ticker drive stack to draw graphics.
-
+## vegocore
+[vegocore](https://github.com/vego-canvas/vego-core)
 
 
 ## License

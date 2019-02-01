@@ -9,7 +9,7 @@ It is designed for building reusable *canvas components* used for tiny games or 
 ## Install
 
 ```
-npm install --save vego
+npm install vego
 ```
 
 
@@ -19,67 +19,116 @@ npm install --save vego
 #### Step 1. Use plugin
 
 ```javascript
-import plugin from 'vego';
-Vue.use(plugin);
 
-// other initialization
+import Vego from 'vego';
+
+Vue.use(Vego, {
+    /*
+     * mouseover firing frequency
+     * set 0 to disable mouseover
+     *
+     * The larger the value, the smaller the CPU usage.
+     * default: 20ms
+     */
+    enableMouseOver: 5,
+     /*
+     * Set true to enable touch and disable mouse event
+     * default: false
+     */
+    enableTouch: false,
+});
+
+
+// other initialize
 ```
 
 #### Step 2. Create a canvas component
 
 ```vue
 <template>
-<div :config="config"></div>
+    <div :r="r" :color="color">
+    </div>
 </template>
 <script>
+import { VegoComponent } from 'vego';
 export default {
-    props: { config: Object },
-    draw(ctx, p) {
+    mixins: [VegoComponent],
+    props: { r: Number, color: String },
+    draw(g) {
         const {
-            x, y, r, color,
-        } = this.config;
-
-        ctx.beginPath();
-        ctx.save();
-        ctx.fillStyle = color;
-        ctx.arc(x, y, r, 0, 2 * Math.PI);
-        ctx.fill();
-        ctx.restore();
+            r, color,
+        } = this;
+        g.beginPath()
+            .setFillStyle(color)
+            .arc(0, 0, r, 0, Math.PI * 2)
+            .fill();
     },
 };
 </script>
-
-
 ```
 
 #### Step 3. Apply canvas component within tag vego-canvas
 
 ```vue
 <template>
-<div>
-    <vego-canvas :width="canvasWidth" :height="canvasHeight">
-        <my-arc :config="config"></my-arc>
+<div class="card">
+    <vego-canvas ref="canvas" :width="canvasWidth" :height="canvasHeight">
+        <my-star
+            :geox="50"
+            :geoy="50"
+            :fill-color="star.fillColor"
+            :stroke-color="star.strokeColor"
+            :spikes="star.spikes"
+            :outer-radius="star.outerRadius"
+            :inner-radius="star.innerRadius">
+        </my-star>
+        <my-star
+            :geox="150"
+            :geoy="50"
+            :fill-color="star.fillColor"
+            :stroke-color="star.strokeColor"
+            :spikes="star.spikes"
+            :outer-radius="star.outerRadius"
+            :inner-radius="star.innerRadius">
+        </my-star>
+        <my-arc
+            :geox="100"
+            :geoy="100"
+            :r="star.outerRadius"
+            :color="star.fillColor">
+        </my-arc>
+
     </vego-canvas>
 </div>
 </template>
 
 <script>
 import circle from '../components/circle.vue';
+import star from '../components/star.vue';
 export default {
-    components: { 'my-arc': circle },
+    components: {
+        'my-star': star,
+        'my-arc': circle,
+    },
+    customOption: 'foo',
+    created(){
+        console.log(this.$options.customOption)
+    },
     data() {
         return {
             canvasWidth: 200,
             canvasHeight: 200,
-            config: {
-                x: 50,
-                y: 50,
-                r: 40,
-                color: 'red',
+            star: {
+                fillColor: 'skyblue',
+                strokeColor: 'blue',
+                spikes: 5,
+                outerRadius: 30,
+                innerRadius: 15,
             },
         };
     },
 };
 </script>
+
 
 ```

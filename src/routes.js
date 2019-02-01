@@ -10,7 +10,7 @@ export default [
             { path: '/', redirect: '/introduction' },
             { path: '/introduction', component: Introduction },
             { path: '/canvascomp', component: Canvascomp },
-            { path: '/spritesheet', component: SpriteSheet },
+            // { path: '/spritesheet', component: SpriteSheet },
             { path: '/game', component: GameCenter },
         ],
     },

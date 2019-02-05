@@ -17,12 +17,12 @@
             <div class="sidebar-header">
                 <router-link to="canvascomp">Canvas Components</router-link>
             </div>
-            <!-- <div class="sidebar-header">
+            <div class="sidebar-header">
                 <router-link to="spritesheet">Sprite Sheet</router-link>
-            </div> -->
-            <!-- <div class="sidebar-header">
-                <router-link to="game">Game!</router-link>
-            </div> -->
+            </div>
+            <div class="sidebar-header">
+                <router-link to="demos">Demos</router-link>
+            </div>
         </nav>
         <nav class="border fixed split-nav" v-if="ismobile">
             <div class="nav-brand">
@@ -41,8 +41,8 @@
                 <ul class="inline">
                     <li><router-link to="introduction">Introduction</router-link></li>
                     <li><router-link to="canvascomp">Canvas Components</router-link></li>
-                    <!-- <li><router-link to="spritesheet">Sprite Sheet</router-link></li> -->
-                    <!-- <li><router-link to="game">Game!</router-link></li> -->
+                    <li><router-link to="spritesheet">Sprite Sheet</router-link></li>
+                    <li><router-link to="demos">Demos</router-link></li>
                 </ul>
                 </div>
             </div>

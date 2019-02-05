@@ -3,23 +3,24 @@
 *SpriteSheet* can play the Sprite animation and differentiate the animation stages based on Settings. For example:
 ```vue
 <template>
-<div>
-    <vego-canvas @domclick="jump" @tick="tick" :width="canvasWidth" :height="canvasHeight">
-        <vego-container :x="x" :y="y">
-            <vego-sprite-sheet :configs="conf" :pattern.sync="pattern"></vego-sprite-sheet>
-        </vego-container>
+    <vego-canvas :width="canvasWidth" :height="canvasHeight">
+        <sprite-sheet
+            :configs="conf"
+            :pattern.sync="pattern"></sprite-sheet>
     </vego-canvas>
-</div>
 </template>
-<script>
-const sheet = require('../assets/spritesheet_grant.png');
 
-export default{
+<script>
+import { SpriteSheet } from 'vego';
+const sheet = require('../assets/spritesheet_grant.png');
+export default {
+    components: {
+        'sprite-sheet': SpriteSheet,
+    },
     data() {
         return {
             canvasWidth: 800,
-            canvasHeight: 400,
-
+            canvasHeight: 360,
             conf: {
                 framerate: 30,
                 image: sheet,
@@ -43,20 +44,7 @@ export default{
                 },
             },
             pattern: 'run',
-
-            velocity: 150,
-            x: 0,
-            y: 100,
         };
-    },
-    methods: {
-        jump() {
-            console.log('jump');
-            this.pattern = 'jump';
-        },
-        tick(due) {
-            this.x = (this.velocity / 1000 * due) % (this.canvasWidth + 165) - 165;
-        },
     },
 
 };

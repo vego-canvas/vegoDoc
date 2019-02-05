@@ -40,7 +40,7 @@ export default {
     },
     customOption: 'foo',
     created(){
-        console.log(this.$options.customOption)
+        console.log(this.$graphic)
     },
     data() {
         return {

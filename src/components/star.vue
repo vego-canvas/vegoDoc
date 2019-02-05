@@ -2,7 +2,7 @@
     <div></div>
 </template>
 <script>
-import {VegoComponent} from 'vego';
+import { VegoComponent } from 'vego';
 export default {
     name: 'my-star',
     mixins: [VegoComponent],
@@ -13,22 +13,14 @@ export default {
         outerRadius: Number,
         innerRadius: Number,
     },
-    created() {
-        console.log('created');
-        console.log(this.$options)
+    data() {
+        return {
+            color: 'red',
+        };
     },
-    mounted() {
-        console.log('mounted');
-        this.vegoDisplayObject.$regist('mouseenter', (payload) => {
-            this.$emit('mouseenter', payload);
-        });
-        this.vegoDisplayObject.$regist('mouseleave', (payload) => {
-            this.$emit('mouseleave', payload);
-        });
-    },
-    customOption: 'foo',
     draw(g) {
         const {
+            color,
             fillColor,
             strokeColor,
             spikes,
@@ -41,7 +33,7 @@ export default {
         let x = cx;
         let y = cy;
         const step = Math.PI / spikes;
-        console.log('draw');
+        console.log('draw')
         g.beginPath()
             .moveTo(cx, cy - outerRadius);
         for (let i = 0; i < spikes; i++) {
@@ -61,11 +53,8 @@ export default {
             .setLineWidth(5)
             .setStrokeStyle(strokeColor)
             .stroke()
-            .setFillStyle(fillColor)
+            .setFillStyle(color)
             .fill();
     },
 };
 </script>
-<style>
-
-</style>

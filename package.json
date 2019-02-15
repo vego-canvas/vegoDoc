@@ -10,7 +10,7 @@
   "dependencies": {
     "immutable": "^4.0.0-rc.12",
     "is-mobile": "^2.0.0",
-    "vego": "0.0.66",
+    "vego": "0.0.69",
     "vue": "^2.5.22",
     "vue-router": "^3.0.2"
   },

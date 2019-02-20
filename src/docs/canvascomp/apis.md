@@ -43,3 +43,32 @@
 ```
 
 3. vegoDisplayObject
+    The essence is [DisplayObject](https://github.com/vego-canvas/vego-core/blob/master/src/render/DisplayObject.js).
+
+    <b>vegoDisplayObject.$geometry:</b>
+
+    The vegoDisplayObject.$geometry is responsive object. When the properties change, the canvas will redraw.
+
+    @properties: (default value)
+    - x: 0,
+    - y: 0,
+    - rotation: 0,
+    - scaleX: 1,
+    - scaleY: 1,
+    - skewX: 0,
+    - skewY: 0,
+    - regX: 0,
+    - regY: 0,
+
+    <b>VegoComponent</b> mixin will mixin vegoDisplayObject.$geometry into vue component as props.
+
+    <b>vegoDisplayObject.$regist:</b>
+
+    A function regist event to vegoDisplayObject. Supported events include:
+
+    @events:
+    - pressd (touch supported)
+    - pressmove (touch supported)
+    - unpressed (touch supported)
+    - mouseenter
+    - mouseleave

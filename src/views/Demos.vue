@@ -57,6 +57,10 @@
                 </div>
             </div>
         </div>
+        <div>
+            <h2>N Body System</h2>
+            <nbody/>
+        </div>
     </div>
 </template>
 
@@ -73,12 +77,15 @@ import utilsMD from '../docs/demos/utils.md';
 import donuts from './donuts.vue';
 import editor from '../components/paint/canvas-vego.vue';
 
+import nbody from '../components/nbody/nbodygravity.vue';
+
 export default {
     components: {
         donuts,
         donutsMD,
         donutMD,
         editor,
+        nbody,
 
         editMD,
         paintBtnMD,

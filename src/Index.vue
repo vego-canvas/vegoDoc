@@ -12,16 +12,16 @@
             <h1>Vego</h1>
             <p>Vue based library which apply MVVM (Model–view–viewmodel) to HTML5 canvas 2D programing.</p>
             <div class="sidebar-header">
-                <router-link to="introduction">Introduction</router-link>
+                <router-link to="/introduction">Introduction</router-link>
             </div>
             <div class="sidebar-header">
-                <router-link to="canvascomp">Canvas Components</router-link>
+                <router-link to="/canvascomp">Canvas Components</router-link>
             </div>
             <div class="sidebar-header">
-                <router-link to="spritesheet">Sprite Sheet</router-link>
+                <router-link to="/spritesheet">Sprite Sheet</router-link>
             </div>
             <div class="sidebar-header">
-                <router-link to="demos">Demos</router-link>
+                <router-link to="/demos">Demos</router-link>
             </div>
         </nav>
         <nav class="border fixed split-nav" v-if="ismobile">
@@ -39,10 +39,10 @@
                 </button>
                 <div class="collapsible-body">
                 <ul class="inline">
-                    <li><router-link to="introduction">Introduction</router-link></li>
-                    <li><router-link to="canvascomp">Canvas Components</router-link></li>
-                    <li><router-link to="spritesheet">Sprite Sheet</router-link></li>
-                    <li><router-link to="demos">Demos</router-link></li>
+                    <li><router-link :to="{path: '/introduction'}">Introduction</router-link></li>
+                    <li><router-link :to="{path: '/canvascomp'}">Canvas Components</router-link></li>
+                    <li><router-link :to="{path: '/spritesheet'}">Sprite Sheet</router-link></li>
+                    <li><router-link :to="{path: '/demos'}">Demos</router-link></li>
                 </ul>
                 </div>
             </div>
@@ -89,6 +89,10 @@ div{
 canvas{
     border: 1px solid #41403e;
     margin: 10px;
+}
+.markdown-max-width{
+    max-width: 100%;
+    overflow: scroll;
 }
 .github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}
 </style>

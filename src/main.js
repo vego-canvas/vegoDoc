@@ -1,6 +1,10 @@
 import Vue from 'vue/dist/vue.js';
 import VueRouter from 'vue-router';
 import Vego from 'vego';
+import hljs from 'highlight.js/lib/highlight';
+// import javascript from 'highlight.js/lib/languages/javascript';
+// hljs.registerLanguage('javascript', javascript);
+import 'highlight.js/styles/github.css';
 import routes from './routes.js';
 // import tweenExample from './views/TweenExample.vue';
 

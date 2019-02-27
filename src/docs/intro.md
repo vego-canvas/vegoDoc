@@ -44,7 +44,7 @@ Vue.use(Vego, {
 
 #### Step 2. Create a canvas component
 
-```vue
+``` html
 <template>
     <div :r="r" :color="color">
     </div>
@@ -69,7 +69,7 @@ export default {
 
 #### Step 3. Apply canvas component within tag vego-canvas
 
-```vue
+``` html
 <template>
 <div class="card">
     <vego-canvas ref="canvas" :width="canvasWidth" :height="canvasHeight">

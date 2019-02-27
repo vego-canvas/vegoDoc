@@ -1,4 +1,4 @@
-``` vue
+``` html
 <template>
     <vego-canvas :width="canvasWidth" :height="canvasHeight">
         <template v-for="don in donuts">

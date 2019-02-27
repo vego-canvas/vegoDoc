@@ -1,4 +1,4 @@
-```vue
+``` html
 <template>
     <div>
         <slot
@@ -165,7 +165,4 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
 ```

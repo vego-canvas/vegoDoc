@@ -1,19 +1,27 @@
 <template>
-    <div>
-        <div class="form-group">
-            <label>DONUTS:</label>
-            <input v-model="num" placeholder="quantity of donuts" />
+    <div class="text-left">
+        <div class="row">
+            <div class="col sm-4">
+                <div class="form-group">
+                    <label for="donuts">DONUTS <i>( Try to modify the number! )</i> :</label>
+                    <input v-model="num" id="donuts" placeholder="quantity of donuts" />
+                </div>
+            </div>
         </div>
-        <div>FPS: {{fps}}</div>
-        <vego-canvas :width="canvasWidth" :height="canvasHeight">
-            <template v-for="don in donuts">
-                <donut
-                    :geox="don.x"
-                    :geoy="don.y"
-                    :key="don.key">
-                </donut>
-            </template>
-        </vego-canvas>
+        <div class="row">
+            <div class="col sm-4">
+            <div>FPS: {{fps}}</div>
+            <vego-canvas :width="canvasWidth" :height="canvasHeight">
+                <template v-for="don in donuts">
+                    <donut
+                        :geox="don.x"
+                        :geoy="don.y"
+                        :key="don.key">
+                    </donut>
+                </template>
+            </vego-canvas>
+            </div>
+        </div>
     </div>
 </template>
 

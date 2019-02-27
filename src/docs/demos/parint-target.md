@@ -1,4 +1,4 @@
-``` vue
+``` html
 <template>
     <div v-if="img"></div>
 </template>
@@ -34,8 +34,5 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
 
 ```

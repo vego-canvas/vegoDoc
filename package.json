@@ -8,6 +8,7 @@
     "build": "webpack --config webpack.config.js"
   },
   "dependencies": {
+    "highlight.js": "^9.15.6",
     "immutable": "^4.0.0-rc.12",
     "is-mobile": "^2.0.0",
     "vego": "0.0.70",

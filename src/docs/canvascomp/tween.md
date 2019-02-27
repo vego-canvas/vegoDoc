@@ -1,7 +1,7 @@
 ## Tween
 
 Sometimes, we need to smooth the transition animation as we change the data. You can do this using the *tween* attribute. For example:
-```vue
+``` html
 <template>
     <div :r="r" :color="color">
     </div>
@@ -23,7 +23,7 @@ export default {
 };
 </script>
 ```
-```vue
+``` html
 <template>
 <div class="card">
     <vego-canvas :width="canvasWidth" :height="canvasHeight">

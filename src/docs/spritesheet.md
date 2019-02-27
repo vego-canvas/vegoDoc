@@ -1,7 +1,7 @@
 # SpriteSheet
 
 *SpriteSheet* can play the Sprite animation and differentiate the animation stages based on Settings. For example:
-```vue
+``` html
 <template>
     <vego-canvas :width="canvasWidth" :height="canvasHeight">
         <sprite-sheet

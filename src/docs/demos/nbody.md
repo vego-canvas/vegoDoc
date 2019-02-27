@@ -1,3 +1,4 @@
+``` html
 <template>
     <vego-canvas :width="canvasWidth" :height="canvasHeight">
         <motion-trails
@@ -136,6 +137,4 @@ export default {
 };
 </script>
 
-<style>
-
-</style>
+```

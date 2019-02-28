@@ -13,12 +13,15 @@ export default {
     },
     mounted() {
         this.vegoDisplayObject.$regist('pressd', (payload) => {
+            console.log('pressd')
             this.$emit('pressd', payload);
         });
         this.vegoDisplayObject.$regist('unpressed', (payload) => {
+            console.log('unpressed')
             this.$emit('unpressed', payload);
         });
         this.vegoDisplayObject.$regist('pressmove', (payload) => {
+             console.log('pressmove')
             this.$emit('pressmove', payload);
         });
     },

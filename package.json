@@ -11,7 +11,8 @@
     "highlight.js": "^9.15.6",
     "immutable": "^4.0.0-rc.12",
     "is-mobile": "^2.0.0",
-    "vego": "0.0.70",
+    "topojson": "^3.0.2",
+    "vego": "0.0.75",
     "vue": "^2.5.22",
     "vue-router": "^3.0.2"
   },

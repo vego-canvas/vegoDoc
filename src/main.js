@@ -1,6 +1,6 @@
 import Vue from 'vue/dist/vue.js';
 import VueRouter from 'vue-router';
-import Vego from 'vego';
+import Vego, { d3Shape, d3Geo } from 'vego';
 import hljs from 'highlight.js/lib/highlight';
 // import javascript from 'highlight.js/lib/languages/javascript';
 // hljs.registerLanguage('javascript', javascript);
@@ -9,7 +9,11 @@ import routes from './routes.js';
 // import tweenExample from './views/TweenExample.vue';
 
 Vue.config.productionTip = false;
-Vue.use(Vego);
+Vue.use(Vego, {
+    enableMouseOver: 16,
+    enableTouch: false,
+    plugins: [d3Shape, d3Geo ],
+});
 Vue.use(VueRouter);
 
 const router = new VueRouter({

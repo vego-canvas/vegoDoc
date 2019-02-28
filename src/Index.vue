@@ -23,6 +23,9 @@
             <div class="sidebar-header">
                 <router-link to="/demos">Demos</router-link>
             </div>
+            <div class="sidebar-header">
+                <router-link to="/d3plugin">D3 Plugin</router-link>
+            </div>
         </nav>
         <nav class="border fixed split-nav" v-if="ismobile">
             <div class="nav-brand">
@@ -91,7 +94,7 @@ canvas{
     margin: 10px;
 }
 .markdown-max-width{
-    max-width: 100%;
+    width: 100%;
     overflow: scroll;
 }
 .github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}
